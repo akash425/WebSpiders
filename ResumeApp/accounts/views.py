@@ -6,7 +6,7 @@ from .models import SignUp
 # Display Sign up page
 
 def sign_up(request):
-    return render(request, 'SignUp.html')
+    return render(request, 'accounts\signup\SignUp.html')
 
 
 
