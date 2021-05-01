@@ -5,5 +5,4 @@ from .models import SignUp
 # Register your models here.
 
 
-admin.site.register\
-    (SignUp)
+admin.site.register(SignUp)
