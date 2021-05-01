@@ -79,6 +79,7 @@
                 </div>
             </div>
 
+            {{form.errors}}
 
             <!-- Button -->
             <div class="form-group">
@@ -90,7 +91,7 @@
                     </button>
                 </div>
             </div>
-            Already Have an account?<a href="#"> Login Here</a>
+            Already Have an account?<a href="{% url 'login' %}"> Login Here</a>
         </fieldset>
     </form>
 </div><!-- /.container -->

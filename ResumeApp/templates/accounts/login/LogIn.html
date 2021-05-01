@@ -1,8 +1,65 @@
 {% extends "base.html" %}
 
-<h1>LogIn</h1>
+{% block content %}
+<br>
+<br>
+<br>
+<div class="container">
 
-<form method="post">
-    {% csrf_token %}
-    {{form.as_p}}
-</form>
+    <form class="well form-horizontal" action=" " method="post" id="contact_form">
+        {% csrf_token %}
+        <fieldset height="200">
+
+            <!-- Form Name -->
+            <legend>
+                <center><h2><b>User Login</b></h2></center>
+            </legend>
+            <br>
+
+
+            <!-- Text input-->
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Username</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input name="user_name" placeholder="Username" class="form-control" type="text">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text input-->
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Password</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-eye-close"></i></span>
+                        <input name="user_password" placeholder="Password" class="form-control" type="password">
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label"></label>
+                <div class="col-md-4"><br>
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <button type="submit" class="btn btn-warning">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspLOGIN <span
+                            class="glyphicon glyphicon-circle-arrow-right"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    </button>
+                </div>
+            </div>
+            New User?<a href="{% url 'sign_up' %}"> SignUp Here</a>
+        </fieldset>
+    </form>
+</div><!-- /.container -->
+<div class="footer-copyright">
+    <div class="container" align="right">
+        © 2021 Copyright Panjab university.
+        <a class="grey-text text-lighten-4 right" href="#!"> </a>
+    </div>
+</div>
+{% endblock %}
