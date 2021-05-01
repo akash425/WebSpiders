@@ -15,6 +15,11 @@
 </head>
 
 <body class="body">
+    {% if request.user.is_authenticated %}
+        <a>Logout</a>
+    {% else %}
+        <a>Login</a>
+    {% endif %}
 	<div>
 	   {% block content %}
 	   {% endblock %}
