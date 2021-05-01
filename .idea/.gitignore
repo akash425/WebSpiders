@@ -1,5 +1,5 @@
 # Default ignored files
 /shelf/
 /workspace.xml
-/ResumeApp/db.sqlite3
+/db.sqlite3
 /Pipfile.lock
