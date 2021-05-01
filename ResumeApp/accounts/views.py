@@ -1,3 +1,12 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 
-# Create your views here.
+from .models import SignUp
+
+# Display Sign up page
+
+def sign_up(request):
+    return render(request, 'SignUp.html')
+
+
+

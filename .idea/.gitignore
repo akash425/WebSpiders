@@ -1,5 +1,8 @@
 # Default ignored files
 /shelf/
 /workspace.xml
+<<<<<<< HEAD
 /db.sqlite3
+=======
+>>>>>>> b14d41f5c86cc18eafeff578d67e99769af83a84
 /Pipfile.lock
