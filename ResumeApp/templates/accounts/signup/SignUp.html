@@ -9,6 +9,60 @@
 <br>
 <div class="container">
 
+    {% if messages %}
+    {% for mess in messages %}
+    <div class="alert alert-{{mess.tags}}" role="alert">
+        {{mess}}
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    {% if otp %}
+    <form class="well form-horizontal" action=" " method="post" id="otp_form">
+        {% csrf_token %}
+
+        <fieldset>
+
+            <!-- Form Name -->
+            <legend>
+                <center><h2><b>Verify Your Email</b></h2></center>
+            </legend>
+            <br>
+
+
+            <!-- Text input-->
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Username</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input type="text" class="form-control" placeholder="Enter Your OTP" aria-label="OTP"
+                               aria-describedby="basic-addon1" name='otp'>
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" name="usr" value="{{usr.email}}">
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label"></label>
+                <div class="col-md-4"><br>
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <button type="submit" class="btn btn-warning">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspVERIFY <span
+                            class="glyphicon glyphicon-send"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    </button>
+                </div>
+            </div>
+            <small class="float-right text-muted"><i><a href="#" class="text-dark"
+                                                        onclick="ReSendOTP('{{usr.username}}', 'resendOTPmess')"><i
+                    id="resendOTPmess">Resend</i> OTP</a></small>
+        </fieldset>
+    </form>
+
+
+    {% else %}
+
+
     <form class="well form-horizontal" action=" " method="post" id="contact_form">
         {% csrf_token %}
 
@@ -50,7 +104,7 @@
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-                        <input name="contact_no" placeholder="+91- "  type="text">
+                        <input name="contact_no" placeholder="+91- " type="text">
                     </div>
                 </div>
             </div>
@@ -79,7 +133,7 @@
                 </div>
             </div>
 
-            {{form.errors}}
+            <!--  {{form.errors}} -->
 
             <!-- Button -->
             <div class="form-group">
@@ -94,6 +148,7 @@
             Already Have an account?<a href="{% url 'login' %}"> Login Here</a>
         </fieldset>
     </form>
+    {% endif %}
 </div><!-- /.container -->
 <div class="footer-copyright">
     <div class="container" align="right">

@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
+{% load static %}
 <head>
     {% block head %}
     {% endblock %}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-	<title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static 'ajax.js' %}"></script>
+    <title>
         {% block title %}
 	   {% endblock %}
     </title>
@@ -15,11 +17,6 @@
 </head>
 
 <body class="body">
-    {% if request.user.is_authenticated %}
-        <a href="{% url "logout" %}">Logout</a>
-    {% else %}
-        <a>Login</a>
-    {% endif %}
 	<div>
 	   {% block content %}
 	   {% endblock %}
