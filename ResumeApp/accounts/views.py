@@ -1,3 +1,4 @@
+
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.urls import reverse_lazy
@@ -24,7 +25,7 @@ class ViewLogIn(LoginView):
 
     # Redirecting to home page
     def get_success_url(self):
-        return reverse_lazy('home')  # for test, should contain home url
+        return reverse_lazy('sign_up')  # for test, should contain home url
 
     # Redirecting logged in users to home page
     def get(self, *args, **kwargs):
