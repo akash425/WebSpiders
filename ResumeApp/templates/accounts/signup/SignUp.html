@@ -10,6 +10,8 @@
 <div class="container">
 
     <form class="well form-horizontal" action=" " method="post" id="contact_form">
+        {% csrf_token %}
+
         <fieldset>
 
             <!-- Form Name -->
@@ -26,7 +28,29 @@
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <input name="user_name" placeholder="Username" class="form-control" type="text">
+                        {{form.username}}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">E-Mail</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                        {{form.email}}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">Contact No.</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                        <input name="contact_no" placeholder="+91- "  type="text">
                     </div>
                 </div>
             </div>
@@ -38,7 +62,7 @@
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <input name="user_password" placeholder="Password" class="form-control" type="password">
+                        {{form.password1}}
                     </div>
                 </div>
             </div>
@@ -50,42 +74,12 @@
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <input name="confirm_password" placeholder="Confirm Password" class="form-control"
-                               type="password">
+                        {{form.password2}}
                     </div>
                 </div>
             </div>
 
-            <!-- Text input-->
-            <div class="form-group">
-                <label class="col-md-4 control-label">E-Mail</label>
-                <div class="col-md-4 inputGroupContainer">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                        <input name="email" placeholder="E-Mail Address" class="form-control" type="text">
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- Text input-->
-
-            <div class="form-group">
-                <label class="col-md-4 control-label">Contact No.</label>
-                <div class="col-md-4 inputGroupContainer">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-                        <input name="contact_no" placeholder="+91" class="form-control" type="text">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Select Basic -->
-
-            <!-- Success message -->
-            <div class="alert alert-success" role="alert" id="success_message">Success <i
-                    class="glyphicon glyphicon-thumbs-up"></i> Success!.
-            </div>
+            {{form.errors}}
 
             <!-- Button -->
             <div class="form-group">
@@ -97,16 +91,14 @@
                     </button>
                 </div>
             </div>
-
+            Already Have an account?<a href="{% url 'login' %}"> Login Here</a>
         </fieldset>
     </form>
-</div>
 </div><!-- /.container -->
 <div class="footer-copyright">
-    <div class="container">
+    <div class="container" align="right">
         © 2021 Copyright Panjab university.
         <a class="grey-text text-lighten-4 right" href="#!"> </a>
     </div>
 </div>
-
 {% endblock %}
