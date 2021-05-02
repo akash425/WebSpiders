@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    {% if resume_list %}
+
+        {% for resume in resume_list %}
+            <ul>
+                <li>
+                    <h2> Name: {{resume.first_name}}{{resume.last_name}} </h2>
+                    <h2> Address: {{resume.address}} </h2>
+                    <form action="{% url 'resume:resume-delete' resume.id %}" method="post" style="display: inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-default btn-sm">Delete</button>
+                    </form>
+                       <form action="{% url 'resume:resume-update' resume.id  %}" method="post" style="display: inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-default btn-sm">Update</button>
+                    </form>
+                </li>
+            
+            </ul>
+        {% endfor %}
+
+    {% else %}
+
+    <h1>No resume created.</h1>
+
+    {% endif %}
+
+
+    <form action="{% url 'resume:create_resume'  %}" method="post" style="display: inline;">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-default btn-sm">Create Resume</button>
+    </form>
+{% endblock %}
