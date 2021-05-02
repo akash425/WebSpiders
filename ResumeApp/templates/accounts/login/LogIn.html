@@ -6,6 +6,14 @@
 <br>
 <div class="container">
 
+    {% if messages %}
+    {% for mess in messages %}
+    <div class="alert alert-{{mess.tags}}" role="alert">
+        {{mess}}
+    </div>
+    {% endfor %}
+    {% endif %}
+
     <form class="well form-horizontal" action=" " method="post" id="contact_form">
         {% csrf_token %}
         <fieldset height="200">
@@ -52,6 +60,8 @@
                     </button>
                 </div>
             </div>
+            Forgot Password?<a href="{% url 'password_reset' %}"> Click Here</a>
+            <br>
             New User?<a href="{% url 'sign_up' %}"> SignUp Here</a>
         </fieldset>
     </form>

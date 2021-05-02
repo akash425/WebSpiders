@@ -7,15 +7,19 @@ from .models import Resume
 from django.views import generic
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
-#from ResumeApp import resume
+
 
 # Create your views here.
 # def home(request):
 #     return HttpResponse('resume form')
 
+
+
 def get_resume(request):
-    user_data=User.objects.filter(username=request.user)
-    print(user_data)
+    user_data=User.objects.filter(username=request.user.get_username())
+    #user_data=User.objects.all()
+    
+    print(request.user.get_username())
     
     return render(request, "resume/resume_form.html", {'user_data':user_data})
     
@@ -23,21 +27,22 @@ def get_resume(request):
 class IndexView(generic.ListView):
     context_object_name = 'resume_list'
     template_name = 'resume/list.html'
+    
     def get_queryset(self):
-        return Resume.objects.all()
+        print(self.request.user)
+        return Resume.objects.filter(user=self.request.user)
     
 class AddResume(CreateView):
     model = Resume
-    fields = ['__all__']
+    fields = ['first_name','last_name','image','address','EduLevel','CourseName', 'StartingYear','IsAppearing','PassOutYear','skills','dob', 'user']
     
     
-class UpdateResume(CreateView):
+class UpdateResume(UpdateView):
     model = Resume
-    fields = ['first_name', 'last_name', 'address']
+    fields = ['first_name','last_name','image','address','EduLevel','CourseName', 'StartingYear','IsAppearing','PassOutYear','skills','dob', 'user']
     
     
 class DeleteResume(DeleteView):
     model = Resume
     
-    success_url = reverse_lazy('resume/list.html')    
-
+    success_url = reverse_lazy('resume:index')    

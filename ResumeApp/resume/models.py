@@ -1,6 +1,7 @@
 from django.db import models
-
+from django.urls import reverse_lazy
 from django.contrib.auth.models import User
+from django.urls import reverse
 # Create your models here.
 
 # class Qualifications(models.Model):
@@ -28,8 +29,11 @@ from django.contrib.auth.models import User
     
 class Resume(models.Model):
     
+    first_name = models.CharField(max_length=200, null=True)
+    last_name = models.CharField(max_length=200, null=True)
     image = models.ImageField(upload_to='blog/blogimages')
     address =  models.TextField()
+    dob = models.DateField(null=True)
     updated_date = models.DateTimeField(auto_now_add=True)
     created_date = models.DateTimeField(auto_now_add=True)
     EduLevel = models.CharField(max_length=100, null=True)
@@ -38,17 +42,23 @@ class Resume(models.Model):
     IsAppearing = models.BooleanField(default=False)
     PassOutYear = models.DateField(null = True)
     skills = models.CharField(max_length=200, null = True)
-    status = models.CharField(max_length=50)
+    status = models.BooleanField(default=False)
     
     
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     # skill_user = models.ForeignKey(Skills_data, on_delete=models.CASCADE)
     # qualifiction_user = models.ForeignKey(Qualifications, on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return self.first_name
+
+    class Meta:
+        ordering = ['first_name']
     
     print(user)
     
     
     
     def get_absolute_url(self):
-        return reverse("resume:list")
+        return reverse('resume:index')
     
