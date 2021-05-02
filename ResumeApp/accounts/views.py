@@ -16,12 +16,12 @@ class ViewLogIn(LoginView):
 
     # Redirecting to home page
     def get_success_url(self):
-        return reverse_lazy('base.html')  # for test, should contain home url
+        return reverse_lazy('home')  # for test, should contain home url
 
     # Redirecting logged in users to home page
     def get(self, *args, **kwargs):
         if self.request.user.is_authenticated:
-            return render('base.html')
+            return render('home')
         return super(ViewLogIn, self).get(*args, **kwargs)
 
 
@@ -53,6 +53,7 @@ def sign_up(request):
     if request.method == 'POST':
         form = CreateSignUpForm(request.POST)
         if form.is_valid():
+
             form.save()
             user = form.cleaned_data.get('username')
             messages.success(request, 'Account was successfully created for '+ user)
