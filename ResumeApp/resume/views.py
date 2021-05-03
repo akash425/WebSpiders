@@ -1,11 +1,12 @@
 from django.contrib.auth.models import User
 from django.http.response import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.urls.base import reverse_lazy
 from .models import Resume
-
+from django.conf import settings
 from django.views import generic
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.core.mail import send_mail
 
 
 
@@ -34,7 +35,21 @@ class IndexView(generic.ListView):
     
 class AddResume(CreateView):
     model = Resume
+    def resume_mail(self):
+        
+        mess = f"Hello Admin,\nPlease Approve {self.request.user}'s Resume \nThanks!"
+
+        send_mail(
+            "Resume Approval Request",
+            mess,
+            settings.EMAIL_HOST_USER,
+            ['akashkushwaha425@gmail.com'],
+            fail_silently=False
+        )
+
+    
     fields = ['first_name','last_name','image','address','EduLevel','CourseName', 'StartingYear','IsAppearing','PassOutYear','skills','dob', 'user']
+    
     
     
 class UpdateResume(UpdateView):

@@ -78,10 +78,29 @@
 
                 
                 <li>
+
                     <h2> Name: {{resume.first_name}} {{resume.last_name}} </h2>
                     <h2> Add</h2>
                     <h2> Address: {{resume.address}} </h2>
-                    <h2> </h2>
+                    <h2> Date of Birth: {{resume.dob}}</h2>
+                    <h2> Qualification type: {{resume.EduLevel}}</h2>
+                    <h2> CourseName: {{resume.CourseName}}</h2>
+                    <h2> Starting Year : {{resume.StartingYear}}</h2>
+                    <h2> Is Appearing: {{resume.IsAppearing}}</h2>
+                    <h2> Passout Year: {{resume.PassOutYear}}</h2>
+                    <h2> Skills: {{resume.skills}}
+
+                    {% if resume.status %}
+                        <h2> Approved </h2>
+
+                    {% else %}
+                        
+                        <h2> Pending</h2>
+
+                    {% endif %}
+
+                    </h2>
+
                     <form action="{% url 'resume:resume-delete' resume.id %}" method="post" style="display: inline;">
                         {% csrf_token %}
                         <button type="submit" class="btn btn-default btn-sm">Delete</button>
