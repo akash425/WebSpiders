@@ -1,390 +1,74 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-	
-<title>Form</title>
-	<style>
-	*{
-	margin: 0;
-	padding: 0;
-}
-body{
-	background:url("pen_notebook_cell_formula_study_80658_1920x1080.jpg");
-	background-size: 280%;
-	background-position: -400px 0px;
-	
-}
-div.main{
-	width: 1200px;
-	margin: 50px auto 100px auto;
-}
-h2{
-	text-align:center;
-	padding: 20px;
-	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
-	
-}
-div.register{
-	background-color: rgba(0,0,0,0.5);
-	width: 100%;
-	font-size: 18px;
-	border-radius: 10px;
-	border: 1px solid rgba(255,255,255,0.3);
-	box-shadow: 2px 2px 15px rgba(0,0,0,0.3);
-	color: #fff;
-	
-}
-form#register{
-	margin: 40px;
-	
-}
-label{
-	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
-	font-size: 18px;
-	font-style: bold;
-	
-}
-input#name{
-	width: 300px;
-	border: 1px solid #ddd;
-	border-radius: 3px;
-	outline: 0;
-	padding: 3px;
-	background-color: #fff;
-	box-shadow: inset 1px 1px 5px rgba(0,0,0,0.3);
-	
-	
-}
-input#submit{	
-	width: 200px;
-	padding: 7px;
-	font-size: 16px;
-	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
-	font-weight: 600;
-	border: none;
-	border-radius: 3px;
-	background-color: rgba(255,100,0,0.8);
-	color: #fff;
-	cursor: pointer;
-	border: 1px solid rgba(255,255,255,0.3);
-	box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
-	margin-bottom: 20px;
-	
-}
-lable,span,h2{
-	text-shadow: 1px 1px 5px
-	rgba(0,0,0,0.3);
-}
-	</style>
-</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
 
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+</head>
 <body>
-	<div class="main">
-	<div class="register">
-		<h2>Enter Your Details</h2>
-		<form id="register" method="post">
-			
-			<label>First Name</label>
-			
-			<input type="text" name="fname" id="name" placeholder="Enter Your First Name">
-		     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<label>Last Name</label>
-		
-			<input type="text" name="lname" id="name" placeholder="ENter Your Last Name">
-			<br><br>
-			<label>Father's Name</label>
-		
-			<input type="text" name="lname" id="name" placeholder="Enter Your Father's Name">
-			<br><br>
-			<label>MOther's Name</label>
-		
-			<input type="text" name="lname" id="name" placeholder="Enter Your Mother's Name">
-			<br><br>
-			<label>D.O.B.</label>
-		    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<select id="name">
-<option value="-1" id="name">Day</option>
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-<option value="4">4</option>
-<option value="5">5</option>
-<option value="6">6</option>
-<option value="7">7</option>
-<option value="8">8</option>
-<option value="9">9</option>
-<option value="10">10</option>
-<option value="11">11</option>
-<option value="12">12</option>
-<option value="13">13</option>
-<option value="14">14</option>
-<option value="15">15</option>
-<option value="16">16</option>
-<option value="17">17</option>
-<option value="18">18</option>
-<option value="19">19</option>
-<option value="20">20</option>
-<option value="21">21</option>
-<option value="22">22</option>
-<option value="23">23</option>
-<option value="24">24</option>
-<option value="25">25</option>
-<option value="26">26</option>
-<option value="27">27</option>
-<option value="28">28</option>
-<option value="29">29</option>
-<option value="30">30</option>
-<option value="31">31</option>
-</select>
-<select id="name">
-<option value="-1">Month</option>
-<option value="January">Jan(1)</option>
-<option value="February">Feb(2)</option>
-<option value="March">Mar(3)</option>
-<option value="April">Apr(4)</option>
-<option value="May">May(5)</option>
-<option value="June">Jun(6)</option>
-<option value="July">Jul(7)</option>
-<option value="August">Aug(8)</option>
-<option value="September">Sep(9)</option>
-<option value="October">Oct(10)</option>
-<option value="November">Nov(11)</option>
-<option value="December">Dec(12)</option>
-</select>
-<select  id="name">
-<option value="-1">Year</option>
-<option value="2019">2019</option>
-<option value="2018">2018</option>
-<option value="2017">2017</option>
-<option value="2016">2016</option>
-<option value="2015">2015</option>
-<option value="2014">2014</option>
-<option value="2013">2013</option>
-<option value="2012">2012</option>
-<option value="2011">2011</option>
-<option value="2010">2010</option>
-<option value="2009">2009</option>
-<option value="2008">2008</option>
-<option value="2007">2007</option>
-<option value="2006">2006</option>
-<option value="2005">2005</option>
-<option value="2004">2004</option>
-<option value="2003">2003</option>
-<option value="2002">2002</option>
-<option value="2001">2001</option>
-<option value="2000">2000</option>
-<option value="1999">1999</option>
-<option value="1998">1998</option>
-<option value="1997">1997</option>
-<option value="1996">1996</option>
-<option value="1995">1995</option>
-<option value="1994">1994</option>
-<option value="1993">1993</option>
-<option value="1992">1992</option>
-<option value="1991">1991</option>
-<option value="1990">1990</option>
-<option value="1989">1989</option>
-<option value="1988">1988</option>
-<option value="1987">1987</option>
-<option value="1986">1986</option>
-<option value="1985">1985</option>
-<option value="1984">1984</option>
-<option value="1983">1983</option>
-<option value="1982">1982</option>
-<option value="1981">1981</option>
-<option value="1980">1980</option>
-</select>
-			<br><br>
-			<label>Gender</label>
-			&nbsp;&nbsp;&nbsp;
-			<input type="radio" name="gender" id="male">
-			&nbsp;
-			<span id="male">Male</span>
-			&nbsp;&nbsp;&nbsp;&nbsp;
-			<input type="radio" name="gender" id="female">
-			&nbsp;
-			<span id="male">Female</span>
-			<br><br>
-			<label>Email ID</label>
-			&nbsp;&nbsp;&nbsp;
-			<input type="email" name="email" id="name" placeholder="Email">
-		    <br><br>
-			
-			<hr><br>
-			<label>Coresspondence Address :</label>
-			<br><br>
-			<label>Address Line 1 </label>
-			<input type="text" name="address" id="name">
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<label>Address Line 2</label>
-			<input type="text" name="address" id="name">
-			<br><br>
-			<label>City</label>
-			<input type="text" name="address" id="name">
-			<br><br>
-			<label>State</label> &nbsp;&nbsp;&nbsp;
-			<select name="state" id="state" id="name">
-				<option value="Andhra Pradesh" id=name>Select State</option>
-<option value="Andhra Pradesh" id=name>Andhra Pradesh</option>
-<option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
-<option value="Arunachal Pradesh">Arunachal Pradesh</option>
-<option value="Assam">Assam</option>
-<option value="Bihar">Bihar</option>
-<option value="Chandigarh">Chandigarh</option>
-<option value="Chhattisgarh">Chhattisgarh</option>
-<option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
-<option value="Daman and Diu">Daman and Diu</option>
-<option value="Delhi">Delhi</option>
-<option value="Lakshadweep">Lakshadweep</option>
-<option value="Puducherry">Puducherry</option>
-<option value="Goa">Goa</option>
-<option value="Gujarat">Gujarat</option>
-<option value="Haryana">Haryana</option>
-<option value="Himachal Pradesh">Himachal Pradesh</option>
-<option value="Jammu and Kashmir">Jammu and Kashmir</option>
-<option value="Jharkhand">Jharkhand</option>
-<option value="Karnataka">Karnataka</option>
-<option value="Kerala">Kerala</option>
-<option value="Madhya Pradesh">Madhya Pradesh</option>
-<option value="Maharashtra">Maharashtra</option>
-<option value="Manipur">Manipur</option>
-<option value="Meghalaya">Meghalaya</option>
-<option value="Mizoram">Mizoram</option>
-<option value="Nagaland">Nagaland</option>
-<option value="Odisha">Odisha</option>
-<option value="Punjab">Punjab</option>
-<option value="Rajasthan">Rajasthan</option>
-<option value="Sikkim">Sikkim</option>
-<option value="Tamil Nadu">Tamil Nadu</option>
-<option value="Telangana">Telangana</option>
-<option value="Tripura">Tripura</option>
-<option value="Uttar Pradesh">Uttar Pradesh</option>
-<option value="Uttarakhand">Uttarakhand</option>
-<option value="West Bengal">West Bengal</option>
-</select>
-			<br><br>
-			<hr>
-			<br>
-			<label>Permanent Address :</label>
-			<br><br>
-			<label>Address Line 1 </label>
-			<input type="text" name="address" id="name">
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<label>Address Line 2</label>
-			<input type="text" name="address" id="name">
-			<br><br>
-			<label>City</label>
-			<input type="text" name="address" id="name">
-			<br><br>
-			<label>State</label> &nbsp;&nbsp;&nbsp;
-			
-			<select name="state" id="name">
-				<option value="Andhra Pradesh" id=name>Select State</option>
-<option value="Andhra Pradesh" id=name>Andhra Pradesh</option>
-<option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
-<option value="Arunachal Pradesh">Arunachal Pradesh</option>
-<option value="Assam">Assam</option>
-<option value="Bihar">Bihar</option>
-<option value="Chandigarh">Chandigarh</option>
-<option value="Chhattisgarh">Chhattisgarh</option>
-<option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
-<option value="Daman and Diu">Daman and Diu</option>
-<option value="Delhi">Delhi</option>
-<option value="Lakshadweep">Lakshadweep</option>
-<option value="Puducherry">Puducherry</option>
-<option value="Goa">Goa</option>
-<option value="Gujarat">Gujarat</option>
-<option value="Haryana">Haryana</option>
-<option value="Himachal Pradesh">Himachal Pradesh</option>
-<option value="Jammu and Kashmir">Jammu and Kashmir</option>
-<option value="Jharkhand">Jharkhand</option>
-<option value="Karnataka">Karnataka</option>
-<option value="Kerala">Kerala</option>
-<option value="Madhya Pradesh">Madhya Pradesh</option>
-<option value="Maharashtra">Maharashtra</option>
-<option value="Manipur">Manipur</option>
-<option value="Meghalaya">Meghalaya</option>
-<option value="Mizoram">Mizoram</option>
-<option value="Nagaland">Nagaland</option>
-<option value="Odisha">Odisha</option>
-<option value="Punjab">Punjab</option>
-<option value="Rajasthan">Rajasthan</option>
-<option value="Sikkim">Sikkim</option>
-<option value="Tamil Nadu">Tamil Nadu</option>
-<option value="Telangana">Telangana</option>
-<option value="Tripura">Tripura</option>
-<option value="Uttar Pradesh">Uttar Pradesh</option>
-<option value="Uttarakhand">Uttarakhand</option>
-<option value="West Bengal">West Bengal</option>
-</select>
-			<br><br>
-			<hr><br>
-			<label>Education :</label>
-			<br><br>
-			<label>Education Level</label>
-			&nbsp;&nbsp;&nbsp;
-			<select name="state" id="name">
-				<option id=name>Select Qualification</option>
-          		<option value="Post Graduate" id=name>Post Graduate</option>
-				<option value="Post Graduate">Post Graduate</option>
-				<option value="Senior Secondary">Senior Secondary</option>
-				<option value="Matriculation">Matriculation</option>
-				<option value="Diploma">Diploma</option>
-			</select>
-			    <br><br>
-				<label>Course Name</label>
-				&nbsp;&nbsp;&nbsp;
-				<input type="text" id="name">
-				<br><br>
-			<hr><br>
-			<label>Known Language</label>
-			&nbsp;&nbsp;&nbsp;
-			<input type="checkbox" name="lang" id="n1">
-			&nbsp;
-			<span id="hindi">Hindi</span>
-			&nbsp;&nbsp;&nbsp;&nbsp;
-			<input type="checkbox" name="lang" id="n1">
-			&nbsp;
-			<span id="eng">English</span>
-			&nbsp;&nbsp;&nbsp;&nbsp;
-			<input type="checkbox" name="lang" id="n1">
-			&nbsp;
-			<span id="Punj">Punjabi</span>
-			<br><br>
-			
-			<label>Interests</label>
-			&nbsp;&nbsp;&nbsp;
-			<input type="checkbox" name="lang" id="n1">
-			&nbsp;
-			<span id="hindi">Photography</span>
-			&nbsp;&nbsp;&nbsp;&nbsp;
-			<input type="checkbox" name="lang" id="n1">
-			&nbsp;
-			<span id="eng">Reading</span>
-			&nbsp;&nbsp;&nbsp;&nbsp;
-			<input type="checkbox" name="lang" id="n1">
-			&nbsp;
-			<span id="Punj">Singing</span>
-			&nbsp;&nbsp;&nbsp;&nbsp;
-			<input type="checkbox" name="lang" id="n1">
-			&nbsp;
-			<span id="Punj">Dancing</span>
-			&nbsp;&nbsp;&nbsp;&nbsp;
-			<input type="checkbox" name="lang" id="n1">
-			&nbsp;
-			<span id="Punj">Programming</span>
-			<br><br>
-			
-			<label>Skills</label>
-			&nbsp;&nbsp;
-			<input type="text" id="name">
-			<br><br>
-			
-			<input type="button" value="Submit" id="submit">
-		</form>
-		</div>
-	</div>
-		@copy 
+
+<h3>Contact Form</h3>
+
+<div class="container">
+  <form action="" method = "POST" enctype="multipart/form-data">
+  {% csrf_token %}
+
+  {{form.as_p}}
+
+    
+    {% comment %} <label for="Add">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+    <label for="country">Country</label>
+    <select id="country" name="country">
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    </select>
+
+    <label for="subject">Subject</label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+    <label for="image">Upload-Image</label>
+    <input type="file" id="image" name="image" required><br><br> {% endcomment %}
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
 </body>
 </html>
